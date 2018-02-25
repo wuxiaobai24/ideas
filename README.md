@@ -1,2 +1,6 @@
 # Ideas
-记录一些好的Idea，然后实现它
+
+- [ ] Dr.com的自动登录
+
+- [ ] ip地址更换后自动发送mail
+- [ ] 脚本化LeetCode题目下载（包括code)
