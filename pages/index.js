@@ -1,15 +1,22 @@
 import Head from "next/head";
-import { Page, Text, Card, Row } from "@zeit-ui/react";
+import { Page, Text, Card, Spacer } from "@zeit-ui/react";
 
-import { getIssues } from '../lib/issues'
+import { getIssues } from "../lib/issues";
 
 export default function Home({ allIssues }) {
   // console.log(allIssues)
-  const issueCards = allIssues.map(({html_url, id, title, labels, created_at, updated_at}, index) => (
-    <Card shadow key={id}>
-      <h3><a href={html_url}>{title}</a></h3>
-    </Card>
-  ))
+  const issueCards = allIssues.map(
+    ({ html_url, id, title, labels, created_at, updated_at }, index) => (
+      <>
+        <Card shadow key={id}>
+          <h3>
+            <a href={html_url}>{title}</a>
+          </h3>
+        </Card>
+        <Spacer y={1} />
+      </>
+    )
+  );
   return (
     <Page>
       <Head>
@@ -24,13 +31,12 @@ export default function Home({ allIssues }) {
   );
 }
 
-
 export async function getServerSideProps() {
-  const allIssues = await getIssues()
-  console.log(allIssues)
+  const allIssues = await getIssues();
+  // console.log(allIssues);
   return {
     props: {
-      allIssues
-    }
-  }
+      allIssues,
+    },
+  };
 }

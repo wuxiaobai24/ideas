@@ -2,6 +2,8 @@
 
 # Ideas
 
+> [web site](https://ideas.codeand.fun)
+
 - [ ] ip地址更换后自动登陆 Dr.com 并发送 mail 来告知 IP。
 - [ ] Ideas 展示页面
 - [ ] Serverless Email Sender
