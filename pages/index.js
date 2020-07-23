@@ -25,7 +25,7 @@ export default function Home({ allIssues }) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const allIssues = await getIssues()
   console.log(allIssues)
   return {
